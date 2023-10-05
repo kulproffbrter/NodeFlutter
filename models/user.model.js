@@ -22,7 +22,7 @@ const userSchema = new Schema({
 },{timestamps: true});
 
 //ใช้ในการๅบันทึกรหัสผ่าน
-userSchema.pre("Save" , async function(){
+userSchema.pre('save' , async function(){
     var user = this;
     try {
         const salt = await bcrypt.genSalt(10);
